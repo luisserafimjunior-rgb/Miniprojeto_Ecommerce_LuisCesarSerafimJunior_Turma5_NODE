@@ -158,3 +158,21 @@ test('pedidos recebem identificadores únicos e resumo reflete vendas', () => {
   assert.equal(resumo.faturamento, 150);
   assert.equal(resumo.quantidadeEmEstoque, 24);
 });
+
+test('não permite estoque negativo', () => {
+  const estado = criarEstadoInicial();
+
+  estado.carrinho.push(
+    { produtoId: 1, quantidade: 4 },
+    { produtoId: 1, quantidade: 4 }
+  );
+
+  assert.throws(() => {
+    pedidos.finalizarPedido(estado, 1);
+  }, /duplicado/);
+
+  assert.equal(
+    estado.produtos.find(p => p.id === 1).estoque,
+    5
+  );
+});

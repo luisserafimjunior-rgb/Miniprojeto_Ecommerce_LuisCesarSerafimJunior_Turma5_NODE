@@ -11,6 +11,17 @@ export function finalizarPedido(estado: Estado, clienteId: number): Pedido {
   if (!cliente) throw new Error(`Cliente ${clienteId} não existe.`);
   if (estado.carrinho.length === 0) throw new Error('Não é possível finalizar carrinho vazio.');
 
+  
+const produtosVistos = new Set<number>();
+
+for (const item of estado.carrinho) {
+  if (produtosVistos.has(item.produtoId)) {
+    throw new Error('Produto duplicado no carrinho.');
+  }
+
+  produtosVistos.add(item.produtoId);
+}
+
   // ETAPA 1: validar TUDO e preparar o histórico ANTES de mexer no estoque.
   const itens: ItemPedido[] = estado.carrinho.map((item) => {
     const produto = estado.produtos.find((atual) => atual.id === item.produtoId);

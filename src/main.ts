@@ -9,6 +9,11 @@ import { gerarRelatorioDeEstoque, gerarResumoVendas } from './relatorios';
 
 const estado = criarEstadoInicial();
 
+const moeda = new Intl.NumberFormat('pt-BR', {
+  style: 'currency',
+  currency: 'BRL'
+});
+
 function secao(titulo: string): void {
   console.log(`\n========== ${titulo} ==========`);
 }
@@ -41,15 +46,23 @@ console.log('Novo cliente:', cadastrarCliente(estado, {
   id: 4, nome: 'Luis Cesar Serafim Junior', email: 'luis@example.com'
 }));
 
+
 secao('3. CARRINHO E CÁLCULOS');
+
 adicionarAoCarrinho(estado, 2, 1);
-adicionarAoCarrinho(estado, 2, 1); // Produto repetido: atualiza quantidade para 2.
+adicionarAoCarrinho(estado, 2, 1);
 adicionarAoCarrinho(estado, 1, 1);
 adicionarAoCarrinho(estado, 4, 1);
-alterarQuantidade(estado, 2, 3); // Mouse passa de 2 para 3 unidades.
+
+alterarQuantidade(estado, 2, 3);
 removerDoCarrinho(estado, 4);
+
 console.table(detalharCarrinho(estado));
-console.log('TOTAL DO CARRINHO: R$', calcularTotalCarrinho(estado).toFixed(2));
+
+console.log(
+  'TOTAL DO CARRINHO:',
+  moeda.format(calcularTotalCarrinho(estado))
+);
 
 secao('4. FINALIZAÇÃO E CONSULTA DE PEDIDOS');
 const pedido = finalizarPedido(estado, 4);

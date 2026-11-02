@@ -137,6 +137,5 @@ faturamento: 2650
 - [ ] Incluir nome completo e identificação **Turma 5 – NODE** no README.
 - [ ] Fazer commits com mensagens claras registrando o desenvolvimento.
 - [ ] Conferir `npm run build`, `npm start` e `npm test` antes do envio.
-- [ ] Enviar o link do GitHub à AVA/GitHub conforme o procedimento exigido pela escola.
+- [ ] Enviar o link do GitHub à AVA/GitHgit remote add originub conforme o procedimento exigido pela escola.
 
-**Importante:** o repositório público e o envio à plataforma devem ser feitos pelo aluno. Este material fornece os arquivos, mas não publica nem envia a entrega automaticamente.
