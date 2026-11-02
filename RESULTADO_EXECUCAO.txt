@@ -1,0 +1,177 @@
+
+========== MINIPROJETO E-COMMERCE | LUIS CESAR SERAFIM JUNIOR | TURMA 5 NODE ==========
+
+========== 1. CATÁLOGO DE PRODUTOS ==========
+┌─────────┬────┬────────────┬───────────────┬───────┬─────────┐
+│ (index) │ id │ nome       │ categoria     │ preco │ estoque │
+├─────────┼────┼────────────┼───────────────┼───────┼─────────┤
+│ 0       │ 1  │ 'Notebook' │ 'Informática' │ 2500  │ 5       │
+│ 1       │ 2  │ 'Mouse'    │ 'Acessórios'  │ 50    │ 10      │
+│ 2       │ 3  │ 'Monitor'  │ 'Informática' │ 900   │ 4       │
+│ 3       │ 4  │ 'Teclado'  │ 'Acessórios'  │ 120   │ 8       │
+└─────────┴────┴────────────┴───────────────┴───────┴─────────┘
+Produto cadastrado: {
+  id: 5,
+  nome: 'Webcam',
+  categoria: 'Acessórios',
+  preco: 199.9,
+  estoque: 6
+}
+Busca parcial "note": [
+  {
+    id: 1,
+    nome: 'Notebook',
+    categoria: 'Informática',
+    preco: 2500,
+    estoque: 5
+  }
+]
+Categoria acessórios: [
+  {
+    id: 2,
+    nome: 'Mouse',
+    categoria: 'Acessórios',
+    preco: 50,
+    estoque: 10
+  },
+  {
+    id: 4,
+    nome: 'Teclado',
+    categoria: 'Acessórios',
+    preco: 120,
+    estoque: 8
+  },
+  {
+    id: 5,
+    nome: 'Webcam',
+    categoria: 'Acessórios',
+    preco: 199.9,
+    estoque: 6
+  }
+]
+Atualização: {
+  id: 5,
+  nome: 'Webcam',
+  categoria: 'Acessórios',
+  preco: 179.9,
+  estoque: 7
+}
+Produto 5 removido: true
+
+========== 2. CLIENTES ==========
+┌─────────┬────┬───────────────┬─────────────────────┐
+│ (index) │ id │ nome          │ email               │
+├─────────┼────┼───────────────┼─────────────────────┤
+│ 0       │ 1  │ 'Ana Silva'   │ 'ana@example.com'   │
+│ 1       │ 2  │ 'Bruno Costa' │ 'bruno@example.com' │
+│ 2       │ 3  │ 'Carla Souza' │ 'carla@example.com' │
+└─────────┴────┴───────────────┴─────────────────────┘
+Cliente por ID: { id: 1, nome: 'Ana Silva', email: 'ana@example.com' }
+Novo cliente: { id: 4, nome: 'Luis Cesar Serafim Junior', email: 'luis@example.com' }
+
+========== 3. CARRINHO E CÁLCULOS ==========
+┌─────────┬───────────┬─────────────┬───────────────┬────────────┬──────────┐
+│ (index) │ produtoId │ nomeProduto │ precoUnitario │ quantidade │ subtotal │
+├─────────┼───────────┼─────────────┼───────────────┼────────────┼──────────┤
+│ 0       │ 2         │ 'Mouse'     │ 50            │ 3          │ 150      │
+│ 1       │ 1         │ 'Notebook'  │ 2500          │ 1          │ 2500     │
+└─────────┴───────────┴─────────────┴───────────────┴────────────┴──────────┘
+TOTAL DO CARRINHO: R$ 2650.00
+
+========== 4. FINALIZAÇÃO E CONSULTA DE PEDIDOS ==========
+Pedido finalizado: {
+  "id": 1,
+  "clienteId": 4,
+  "itens": [
+    {
+      "produtoId": 2,
+      "nomeProduto": "Mouse",
+      "quantidade": 3,
+      "precoUnitario": 50,
+      "subtotal": 150
+    },
+    {
+      "produtoId": 1,
+      "nomeProduto": "Notebook",
+      "quantidade": 1,
+      "precoUnitario": 2500,
+      "subtotal": 2500
+    }
+  ],
+  "total": 2650,
+  "data": "2026-11-02T01:37:38.189Z"
+}
+Pedidos do cliente 4: [
+  {
+    "id": 1,
+    "clienteId": 4,
+    "itens": [
+      {
+        "produtoId": 2,
+        "nomeProduto": "Mouse",
+        "quantidade": 3,
+        "precoUnitario": 50,
+        "subtotal": 150
+      },
+      {
+        "produtoId": 1,
+        "nomeProduto": "Notebook",
+        "quantidade": 1,
+        "precoUnitario": 2500,
+        "subtotal": 2500
+      }
+    ],
+    "total": 2650,
+    "data": "2026-11-02T01:37:38.189Z"
+  }
+]
+Todos os pedidos: [
+  {
+    "id": 1,
+    "clienteId": 4,
+    "itens": [
+      {
+        "produtoId": 2,
+        "nomeProduto": "Mouse",
+        "quantidade": 3,
+        "precoUnitario": 50,
+        "subtotal": 150
+      },
+      {
+        "produtoId": 1,
+        "nomeProduto": "Notebook",
+        "quantidade": 1,
+        "precoUnitario": 2500,
+        "subtotal": 2500
+      }
+    ],
+    "total": 2650,
+    "data": "2026-11-02T01:37:38.189Z"
+  }
+]
+Estoque do mouse após compra: 7
+
+========== 5. RELATÓRIOS ==========
+┌─────────┬────┬────────────┬─────────┬─────────────────────┐
+│ (index) │ id │ nome       │ estoque │ valorTotalEmEstoque │
+├─────────┼────┼────────────┼─────────┼─────────────────────┤
+│ 0       │ 1  │ 'Notebook' │ 4       │ 10000               │
+│ 1       │ 2  │ 'Mouse'    │ 7       │ 350                 │
+│ 2       │ 3  │ 'Monitor'  │ 4       │ 3600                │
+│ 3       │ 4  │ 'Teclado'  │ 8       │ 960                 │
+└─────────┴────┴────────────┴─────────┴─────────────────────┘
+RESUMO: {
+  quantidadePedidos: 1,
+  produtosCadastrados: 4,
+  quantidadeEmEstoque: 23,
+  unidadesVendidas: 4,
+  faturamento: 2650
+}
+
+========== 6. TESTES DE SITUAÇÕES INVÁLIDAS ==========
+ERRO ESPERADO (preço negativo): Valor monetário precisa ser um número finito e não negativo.
+ERRO ESPERADO (quantidade maior que estoque): Estoque insuficiente: Notebook possui 4 unidade(s).
+ERRO ESPERADO (carrinho vazio): Não é possível finalizar carrinho vazio.
+ERRO ESPERADO (cliente com e-mail duplicado): Já existe cliente com o e-mail ana@example.com.
+
+========== FIM DA DEMONSTRAÇÃO ==========

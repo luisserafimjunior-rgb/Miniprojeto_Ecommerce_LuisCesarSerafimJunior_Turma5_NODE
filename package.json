@@ -1,0 +1,17 @@
+{
+  "name": "miniprojeto-ecommerce-luis-cesar-serafim-junior",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mini-projeto avaliativo de E-commerce em TypeScript - Turma 5 NODE",
+  "type": "commonjs",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/main.js",
+    "dev": "npm run build && npm start",
+    "test": "npm run build && node --test tests/*.test.cjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.0"
+  }
+}
