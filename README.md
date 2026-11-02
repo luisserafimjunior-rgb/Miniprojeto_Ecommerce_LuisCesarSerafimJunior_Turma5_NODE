@@ -139,4 +139,4 @@ faturamento: 2650
 - [ ] Conferir `npm run build`, `npm start` e `npm test` antes do envio.
 - [ ] Enviar o link do GitHub à AVA/GitHub conforme o procedimento exigido pela escola.
 
-**Importante:** o repositório público e o envio à plataforma devem ser feitos pelo aluno. Este material fornece os arquivos, mas não publica nem envia a entrega automaticamente.
+
